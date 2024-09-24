@@ -4,8 +4,8 @@ Problem statement: Create a simple program. The program should prompt 2 numbers,
 								
 Questions:								
 Is there a limit of inputs? Fixed quantity of numbers is 2.		
-Are there several input fields (one per digit) or one? One.		
-If there is only one, how is the correct input? Is there a seperator per digit (e.g. comma and/or space)? Comma, space is optional		
+Are there several input fields (one per number) or one? One.		
+If there is only one, how is the correct input? Is there a seperator per number (e.g. comma and/or space)? Comma, space is optional		
 								
 Test cases:	
 What if character/ special symbol/ punctuation mark except comma is prompted? 					
@@ -36,27 +36,23 @@ AddNumbers
 	SPLIT userInput AT THE SEPERATOR "," TO numbersList // check for spaces, are there commas in the string							
 								
 	FOR EACH item OF numbersList 							
-		IF not a digit						
+		IF not a number						
 		PROMPT ("Please make sure that you only add single numbers")						
 		END IF 						
 	END FOR EACH							
 
-
-
-
-
-	SUBTRACT digit2 from digit1							
+	SUBTRACT number2 from number1							
 		IF result is negative,						
-		biggestDigit = digit2, 						
-		substractionResult = digit2 - digit1						
-		DISPLAY "Result of substraction of smaller number number from bigger is substractionResult"						
+		biggestnumber = number2, 						
+		substractionResult = number2 - number1						
+		DISPLAY "Result of substraction of smaller number number1 from bigger number number2 is substractionResult"						
 								
 		ELSE IF result equals zero,						
-		DISPLAY "digit1 and digit2 are equal"						
+		DISPLAY "Numbers are equal."						
 								
 		ELSE						
-		biggestDigit = digit1						
-		substractionResult = digit1 - digit2						
-		DISPLAY "Result of substraction of smaller number number from bigger is substractionResult"						
-		END IF						
+		biggestnumber = number1						
+		substractionResult = number1 - number2						
+		DISPLAY "Result of substraction of smaller number number2 from bigger number number1 is substractionResult"						
+		END IF
 END								

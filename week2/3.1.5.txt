@@ -1,0 +1,70 @@
+Combine Ex. 3.1.2 and 3.1.4 into one program.																									
+
+Problem statement: The program should ask the user to insert 2 numbers. Then the program should ask if user wants to add or subtract two numbers, calculate and print the result of the chosen operation.																						
+																									
+Questions																									
+Is there a limit of user inputs? Inputs number fixed as 2 numbers.																		
+Are there several input fields (one per number) or one? One.																			
+If there is only one, how is the correct input? Is there a separator per number (e.g. comma and/or space)? Comma, space is optional	
+Which mathematical operations are available to user? Add/Subtract																			
+																									
+Test cases:	
+What if character/ special symbol/ punctuation mark except comma is prompted? 					
+    1,@,7,3 => false; 1,2,7,3 => true; 1, 2, 7, 3 => true;																	
+What if only 1 number is prompted?					
+    1 => false	1, 2 => true																		
+What if input field is empty?
+    "" => false																			
+What if input field has no separators?					
+    01226354 => false
+What if user does not select from dropdownlist?
+    Program should wait for selection.																			
+																									
+Input constraints: 	
+    only numbers can be used in th input field																							
+	fixed amount of numbers in the input field is 2																								
+	separator in the input field - comma, space																								
+																									
+Input:	Input 2 numbers in one field, separated by comma																								
+Processes: select needed operation, compare the numbers, fulfill the operation																							
+Output:	The result of adding/subtraction																					
+																									
+AddNumbers																									
+	INITIALIZE userInput AS String;																								
+	INITIALIZE counter;																								
+	INITIALIZE numbersList AS List;																								
+	INITIALIZE result as 0;																								
+	INITIALIZE dropdownValue1 as "Add"																								
+	INITIALIZE dropdownValue2 as "Subtract"																								
+																									
+	PROMPT "Please input 2 numbers, separated by commas" AS userInput																								
+	SPLIT userInput AT THE SEPERATOR "," TO numbersList // check for spaces, are there commas in the string																								
+																									
+	FOR EACH item OF numbersList 																								
+		IF not a number																							
+		PROMPT ("Please make sure that you only add single numbers")																							
+		END IF 																							
+	END FOR EACH																								
+	
+    PROMPT "Please select if you want to add or subtract the numbers?" AS dropdownlist
+																							
+	IF dropdownValue is "Subtract"																								
+		SUBTRACT number2 from number1																							
+			IF result is negative,																						
+			biggestnumber = number2, 																						
+			result = number2 - number1																						
+			DISPLAY "Result of substraction of number1 from number2 is " +result																						
+																									
+			ELSE IF result equals zero,																						
+			DISPLAY "Numbers are equal. Substraction result is 0"																						
+																									
+			ELSE																						
+			biggestnumber = number1																						
+			result = number1 - number2																						
+			DISPLAY "Result of substraction of number2 from number1 is "+result																						
+			END IF																						
+	ELSE																								
+			result = number1+number2																						
+			DISPLAY "Result of adding is "+result																						
+	END IF																								
+END																									
