@@ -1,0 +1,62 @@
+Allow the user to input numbers, subtract the smaller from the bigger number and print the result.								
+								
+Problem statement: Create a simple program. The program should prompt 2 numbers, compare them, subtract the smaller from the bigger and print the result.								
+								
+Questions:								
+Is there a limit of inputs? Fixed quantity of numbers is 2.		
+Are there several input fields (one per digit) or one? One.		
+If there is only one, how is the correct input? Is there a seperator per digit (e.g. comma and/or space)? Comma, space is optional		
+								
+Test cases:	
+What if character/ special symbol/ punctuation mark except comma is prompted? 					
+    1,@,7,3 => false	1,2,7,3 => true	1, 2, 7, 3 => true
+What if only 1 number is prompted?					
+    1 => false	1, 2 => true	
+What if input field is empty?					
+    "" => false		
+What if input field has no separators?					
+    01226354 => false		
+								
+Input constraints: 	
+    only numbers can be used							
+	fixed amount of numbers 2							
+	separator - comma, space							
+								
+Input:	Input 2 numbers in one field, separated by comma							
+Process:	compare the numbers							
+Output:	The greater number of X and Y is ..							
+								
+AddNumbers								
+	INITIALIZE userInput AS String;							
+	INITIALIZE counter;							
+	INITIALIZE numbersList AS List;							
+	INITIALIZE subtractionResult as 0;							
+								
+	PROMPT "Please input 2 numbers, separated by commas" AS userInput							
+	SPLIT userInput AT THE SEPERATOR "," TO numbersList // check for spaces, are there commas in the string							
+								
+	FOR EACH item OF numbersList 							
+		IF not a digit						
+		PROMPT ("Please make sure that you only add single numbers")						
+		END IF 						
+	END FOR EACH							
+
+
+
+
+
+	SUBTRACT digit2 from digit1							
+		IF result is negative,						
+		biggestDigit = digit2, 						
+		substractionResult = digit2 - digit1						
+		DISPLAY "Result of substraction of smaller number number from bigger is substractionResult"						
+								
+		ELSE IF result equals zero,						
+		DISPLAY "digit1 and digit2 are equal"						
+								
+		ELSE						
+		biggestDigit = digit1						
+		substractionResult = digit1 - digit2						
+		DISPLAY "Result of substraction of smaller number number from bigger is substractionResult"						
+		END IF						
+END								

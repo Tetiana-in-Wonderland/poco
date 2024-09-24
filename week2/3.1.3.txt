@@ -1,0 +1,50 @@
+Task: Declare 2 variables, both numbers. Compare which number is greater. Log the output, e.g. "The greater number of 5 and 10 is 10." Add an output for the else statement, e.g. "The smaller number of 5 and 10 is 5."								
+								
+Problem statement: Create a simple program. The program should prompt 2 numbers, compare them and print the message about which number is bigger								
+								
+Questions:								
+Is there a limit of inputs? Fixed quantity of numbers is 2.		
+Are there several input fields (one per number) or one? One.		
+If there is only one, how is the correct input? Is there a seperator per number (e.g. comma and/or space)? Comma, space is optional.		
+								
+Test cases:	
+What if character/ special symbol/ punctuation mark except comma is prompted?
+    1,@,7,3 => false	1,2,7,3 => true	1, 2, 7, 3 => true
+What if only 1 number is prompted?					
+    1 => false	1, 2 => true	
+What if input field is empty?					
+    "" => false		
+What if input field has no separators?
+    01226354 => false		
+								
+Input constraints: only numbers can be used							
+	fixed quantity of numbers is 2							
+	separator - comma, space							
+								
+Input:	Input 2 numbers in one field, separated by comma							
+Process:	compare the numbers							
+Output:	The greater number of X and Y is ..							
+														
+
+Program																							
+	INITIALIZE userInput AS String;																								
+	INITIALIZE counter;																								
+	INITIALIZE numbersList AS List;																								
+																									
+	PROMPT "Please input 2 numbers, separated by commas" AS userInput																								
+	SPLIT userInput AT THE SEPARATOR "," TO numbersList // check for spaces, are there commas in the string																								
+																									
+	FOR EACH item OF numbersList 																								
+		IF not a number																							
+		Display ("Please make sure that you only add numbers")																							
+		then go to PROMPT
+        
+        ELSE,
+            SUBTRACT number2 from number1							
+                IF result is negative,						
+                    DISPLAY "The greater number of number1 and number2 is number2"						
+                ELSEIF result equals zero,						
+                    DISPLAY "number1 and number2 are equal"						
+                ELSE						
+                    DISPLAY "The greater number of number1 and number2 is number1"																														
+END

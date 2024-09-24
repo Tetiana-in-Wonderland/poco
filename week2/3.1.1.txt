@@ -1,0 +1,16 @@
+Task: Create a program that prompts for your name and prints a greeting using your name.
+
+Problem statement: Create a simple program. The program should prompt user name and then display a greeting using the prompted name.
+
+
+1. There is a variable UserName
+2. Prompt "Please enter your name"
+3. Store user input in variable UserName
+3.1. Trim spaces from beginning and end of UserName
+4. Take the length of UserName and store in in COUNT
+    IF COUNT is more than 50
+        Display "The name entered was too long, it should be 50 characters or less."
+        then go back to step 2
+    Else,
+5. IFif COUNT is equal to 0, go back to step 2
+6. Display "Hello, " + UserName																				

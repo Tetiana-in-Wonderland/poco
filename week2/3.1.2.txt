@@ -1,0 +1,54 @@
+Allow the user to input numbers, add them and print the result.																									
+																									
+Problem statement: Create a simple program. The program should prompt the numbers,  calculate their sum and then display this sum.																									
+																									
+Questions:																									
+1.Is there a limit of inputs? Min 2 max 50.																			
+2. Are there several input fields (one per number) or one? One.																			
+3. If there is only one, what is the correct input? Is there a separator per number (e.g. comma and/or space)? Comma, space is optional																			
+																									
+Test cases:	
+What if character/ special symbol/ punctuation mark except comma is prompted?
+    1,@,7,3 => false	1,2,7,3 => true	1, 2, 7, 3 => true																	
+What if only 1 number is prompted?					
+    1 => false	1, 2 => true																		
+What if input field is empty?					
+    "" => false																			
+What if input field has no separators?					
+    01226354 => false																			
+																									
+																									
+Input constraints: 
+    only numbers can be used																								
+	max numbers 50, min 2																								
+	separator - comma, space optional																								
+																									
+Input:	Input numbers in one field, seperated by comma																								
+Process:	calculate the sum of the numbers																								
+Output:	sum																								
+																									
+Program																							
+	INITIALIZE userInput AS String;																								
+	INITIALIZE counter;																								
+	INITIALIZE numbersList AS List;																								
+	INITIALIZE totalAmount as 0;																						
+																									
+	PROMPT "Please input minimum 2 and maximum 50 numbers (using numbers 0-9), separated by commas" AS userInput																								
+	SPLIT userInput AT THE SEPARATOR "," TO numbersList // check for spaces, are there commas in the string																								
+																									
+	FOR EACH item OF numbersList 																								
+		IF not a number																							
+		Display ("Please make sure that you only add numbers")																							
+		then go to PROMPT
+        ELSE,
+            add 1 to COUNT numbers
+        IF COUNT is less than 2 and more than 50
+            Display "The entered row should be from 2 to 50 numbers."
+        then go back to PROMPT
+        Else,
+																																																																						
+	COUNT sum of numbers in the numbersList as totalAmount																								
+																									
+	DISPLAY "The sum is " + totalAmount																							
+END
+													
