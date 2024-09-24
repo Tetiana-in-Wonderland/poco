@@ -1,0 +1,93 @@
+Write a program that asks the user for a date. Find the day of the year for the given date. For example,
+January 1st would be 1, and December 31st is 365.
+a) Do not include leap years.
+b) Include leap years. Check the rules for leap years on the internet, and implement them in your program.
+
+Problem statement: The program should ask user to prompt the date. Then the program should display day of the year as an index number. 
+
+Input: full date
+Input constraints: a) fixed quamtity of index number options is 365 b) fixed quamtity number of index number options is 365 or 366
+
+Input constraints: 	
+    only numbers can be used in th input field																							
+	insertion format is dd/mm/yyyy
+    separator used - slash																																															
+																									
+Input:	Fill date in one field, in format dd/mm/yyyy																								
+Processes: calculate day index number																							
+Output:	index number of the day of the year
+
+A) Program without leap/non-leap year
+    Initialize yearDay as ""
+    Initialize inputDay as ""
+    Initialize inputMonth as ""
+    Initialize inputYear as ""
+    Initialize daysnumber[inputmonth] as
+        January=0
+        February=31
+        March=59
+        April=90
+        May=120
+        June=151
+        July=181
+        August=212
+        September=243
+        October=273
+        November=304
+        December=334
+
+    PROMPT "Day" as inputDay
+    PROMPT "Month" as inputMonth
+    PROMPT "Year" as inputYear
+
+    COUNT daysnumber[inputMonth]+inputDay=yearDay
+
+    DISPLAY "Day of the year is "+yearDay
+
+    B) Program for leap/non-leap year
+    Initialize yearDay as ""
+    Initialize inputDay as ""
+    Initialize inputMonth as ""
+    Initialize inputYear as ""
+    Initialize daysnumber[inputMonth] as
+        January=0
+        February=31
+        March=59
+        April=90
+        May=120
+        June=151
+        July=181
+        August=212
+        September=243
+        October=273
+        November=304
+        December=334
+
+    Initialize daysnumber[leapinputMonth] as
+        January=0
+        February=31
+        March=60
+        April=91
+        May=121
+        June=152
+        July=182
+        August=213
+        September=244
+        October=274
+        November=305
+        December=335
+
+    PROMPT "Day" as inputDay
+    PROMPT "Month" as inputMonth
+    PROMPT "Year" as inputYear
+
+    If inputYear/4=wholenumber
+        inputMonth=leapinputMonth
+        COUNT daysnumber[leapinputMonth]+inputDay=yearDay
+        DISPLAY "Day of the year is "+yearDay
+    ELSE 
+        COUNT daysnumber[inputMonth]+inputDay=yearDay
+END
+
+
+
