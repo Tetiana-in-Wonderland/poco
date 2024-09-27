@@ -20,6 +20,7 @@ for (let i = 0; i < 10; i = i + 2)
     {
     console.log ("Hello Powercoders! i = " + i);
     }
+    
     var number = 1;
     /*while (true) {
         console.log("number is " + number);
