@@ -1,7 +1,5 @@
 // Let`s build a calculator
 
-let firstNumber, secondNumber, result, operation;
-
 function sum(firstAddendum, secondAddendum) {
     return firstAddendum + secondAddendum;
 }
@@ -18,26 +16,26 @@ function product (multiplier, multiplicand) {
 do {
     firstNumber = Number(prompt("Enter the first number: "));
     secondNumber = Number(prompt("Enter the second number: "))
-} //while(isNaN(firstNumber)) || (isNaN(secondNumber)); - wrong syntax
+} //while(isNaN(firstNumber)) || (isNaN(secondNumber)); - wrong syntax;
     while(isNaN(firstNumber) || isNaN(secondNumber));
 
 
 operation = prompt("Choose an operation (+, -, *, /): ");
 
 if(operation === "+") {
-    console.log(`The result is ${sum}`);
+    result = sum(firstNumber, secondNumber);
 }
 else if (operation === "-") {
-    result = firstNumber - secondNumber;
+    result = difference(firstNumber, secondNumber);
 }
 else if (operation === "/") {
     // What about secondNumber === 0?
     result = secondNumber === 0 ? "You cannot divide by zero." :
-    firstNumber / secondNumber;
+    result = ratio(firstNumber, secondNumber);
 }
 
 else if (operation === "*") {
-    result = firstNumber * secondNumber;
+    result = product(firstNumber, secondNumber);
 }
 
 console.log(`The result is: ${result}`)
