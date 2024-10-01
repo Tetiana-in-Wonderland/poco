@@ -1,36 +1,33 @@
-/* Define three variables for the LaunchCode shuttle:
-• one for the starting fuel level,
-• another for the number of astronauts aboard,
-• and the third for the altitude the shuttle reaches.
+//• Create an array with the names of five cities. Access and log the third city in the array.
 
-Construct while loops to do the following:
-a) Prompt the user to enter the starting fuel level. The loop should continue until the user enters a positive
-value greater than 5000 but less than 30000.*/
+let myArray1 = ["Zurich", "Lausanne", "Bern", "Bex", "Sion"];
+console.log(myArray1[2]);
 
-let fuelStart, astronautsNumber;
-let shuttleAltitude = 0;
+//• Create an array of numbers [5, 10, 15, 20]. Add a number at the end, remove the first number, and log
+//the final array.
 
-do {
-    fuelStart = Number(prompt("Enter fuel level, greater than 5 000 and less than 30 000: "))
+let myArray2 = [5, 10, 15, 20];
+myArray2.shift(); //removes 1st element of array
+myArray2.push(25); //adds last element into array
+
+function printArrayInOneLine(array, separator = ", ")
+{
+    let text = "";
+    for (let i = 0; i < array.length; i++) {
+    text = text + array[i];
+    if (i !== array.lenth -1) {
+    text = text + separator;
+    }
+    }
+console.log(text);
 }
-    while (isNaN(fuelStart) || ((fuelStart) < 5000)|| ((fuelStart) > 30000));
-/*b) Use a second loop to query the user for the number of astronauts (up to a maximum of 7). Validate the
-entry by having the loop continue until the user enters an integer from 1 - 7.*/
 
-do {
-    astronautsNumber = Number(prompt("Enter the number of astronauts, from 1 to 7: "))
+printArrayInOneLine(myArray2, ", ")
+
+//• Create an object representing a book with properties title, author, and year. Log the book’s title
+let book = {
+    title: "For Whom The Bell Tolls",
+    author: "Ernest Hemingway", 
+    year: 1940,
 }
-    while (isNaN(astronautsNumber) || ((astronautsNumber) < 1)|| ((astronautsNumber) > 7));
-
-/*c) Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the
-fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers. (Hint: The
-loop should end when there is not enough fuel to boost the crew another 50 km, so the fuel level might
-not reach 0). */
-
-console.log("Current fuel status is " + fuelStart + "l, current altitude is " + shuttleAltitude + "km.")
-
-do {
-    console.log("Current fuel status is " + (fuelStart = fuelStart - 100) + "l, current altitude is " + (shuttleAltitude = shuttleAltitude + 50) + "km.")
-}
-    while (fuelStart > 0)
-
+console.log(book.title + " by " + book.author + ".")
