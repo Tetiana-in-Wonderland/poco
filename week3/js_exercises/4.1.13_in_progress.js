@@ -1,15 +1,25 @@
 //Create an array of five numbers. Write a for loop to sum the numbers.
 
+let result = "";
 let myInput = [10, 13, 18, 22, 14];
 
+function sumofArray(array) {
+    for (let i = 0; i < array.length; i++) 
+        {
+        result = array[i-1] + array[i];
+        if (i !== array.length -1) 
+            {
+            result = result + array[i];
+        }
+    }
+    console.log(result);
+}
 
-    for (let i = 0; i < input.length; current_index++)
-        input[currentIndex] + input[currentIndex +1]
+sumofArray(myInput)
 
 
-printArrayInOneLine(myInput, ", ")
 
-// Print array in one line.
+/* Print array in one line.
 function printArrayInOneLine(array, separator = ", ")
 {
     // if (separator === undefined) {
@@ -22,6 +32,6 @@ function printArrayInOneLine(array, separator = ", ")
             text = text + separator;
         }
     }
-    text = text + "]"
+    //text = text + "]"
     console.log(text);
-}
+}*/

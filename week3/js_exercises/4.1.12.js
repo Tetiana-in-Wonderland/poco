@@ -7,7 +7,7 @@ Expected behaviour: Input -> Output
 */
 
 function incrementItems(array) {
-    for (let i = 0; i < array.length ; i++) {
+    for (let i = 0; i < array.length; i++) {
         array[i] = array[i] + 1
     }
     return array;
@@ -16,13 +16,13 @@ function incrementItems(array) {
 function printArrayInOneLine(array, separator = ", ")
 {
     let text = "";
-    for (let i = 0; i < array.length -1; i++) {
+    for (let i = 0; i < array.length; i++) {
         text = text + array[i];
-        if (i !== array.lenth -1) {
+        if (i !== array.length -1) {
             text = text + separator;
         }
     }
-console.log(text);
+    console.log(text);
 }
 
 arr1 = [0 , 1, 2 , 3];
