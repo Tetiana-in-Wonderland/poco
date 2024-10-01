@@ -27,10 +27,12 @@ fuel level by 100 units for each astronaut aboard. Also, increase the altitude b
 loop should end when there is not enough fuel to boost the crew another 50 km, so the fuel level might
 not reach 0). */
 
-console.log("Current fuel status is " + fuelStart + "l, current altitude is " + shuttleAltitude + "km.")
-
 do {
     console.log("Current fuel status is " + (fuelStart = fuelStart - 100) + "l, current altitude is " + (shuttleAltitude = shuttleAltitude + 50) + "km.")
 }
-    while (fuelStart > 0)
+    while (fuelStart > 100);
+
+if (fuelStart === 100) {
+    console.log("You have " + fuelStart + "l of fuel left. It is enough to make another 50km.")
+}
 
