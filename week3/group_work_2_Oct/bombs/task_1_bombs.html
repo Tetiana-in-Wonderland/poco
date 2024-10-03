@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper game</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <header>
+      <span><b>Bombs count:</b> <span id="bombs-count">0</span></span>
+      <span><b>Cleared cells:</b> <span id="cleared-cells-count">0</span>/<span id="total-cells-to-clear">0</span></span>
+    </header>
+
+    <div id="playfield"><div class="row"><div class="cell " style="color:" onclick="onCellClicked(0, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(0, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(1, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(1, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(2, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(2, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(3, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(3, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(4, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(4, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(5, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(5, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(6, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(6, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(7, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(7, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(8, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(8, 9, event)"></div></div><div class="row"><div class="cell " style="color:" onclick="onCellClicked(9, 0, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 1, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 2, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 3, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 4, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 5, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 6, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 7, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 8, event)"></div><div class="cell " style="color:" onclick="onCellClicked(9, 9, event)"></div></div></div>
+
+    <p id="message"></p>
+
+    <script>
+      // Set this constant to true to debug the placement of bombs without
+      // having to click on all cells to reveal them.
+      const CHEAT_REVEAL_ALL = true
+
+      const ROWS_COUNT = 10
+      const COLS_COUNT = 10
+      //const BOMBS_COUNT = 10
+
+      let defeat = false
+      let victory = false
+
+      // Cell constructor
+      function Cell() {
+        this.discovered = false
+        this.isBomb = false
+        this.hasBeenFlagged = false
+      }
+
+      // Initialize cells
+      let cells = Array(ROWS_COUNT)
+      for (let row = 0; row < ROWS_COUNT; row++) {
+        cells[row] = Array(COLS_COUNT)
+        for (let col = 0; col < COLS_COUNT; col++) {
+          cells[row][col] = new Cell()
+        }
+      }
+
+      //
+      // TODO: Task 1 - add some bombs at fixed positions.
+      /*
+        let bombLocation = [[0,0],[2,7],[5,9],[8,2],[9,2],[9,9]]
+            for (i=0; i < bombLocation; i++) {
+              bombLocation[i].isBomb = true
+        }
+      */
+
+      cells[0][0].isBomb = true;
+      cells[1][7].isBomb = true;
+      cells[4][9].isBomb = true;
+      cells[8][2].isBomb = true;
+      cells[9][2].isBomb = true;
+      cells[9][9].isBomb = true;
+
+
+      // TODO: Task 2 - Comment out the code of task 1. Instead of adding bombs in fixed places, add 10 of them in random places.
+      //                Add a BOMBS_COUNT constant so that you can easily change the amount of bombs placed. Put it next to the
+      //                other constants.
+      //
+
+      //let bombLocation = [[1,5],[2,4],[7,10],[4,9],[3,6],[3,7],[6,4],[10,1],[7,7],[8,2]]
+      //cellText = '💣'
+      let r;
+      let c;
+      for (i=0; i < BOMBS_COUNT; i++){
+              r = Math.floor(Math.random()*BOMBS_COUNT)
+              c = Math.floor(Math.random()*BOMBS_COUNT)
+              //console.log(r + " , " + c)
+              cells[r][c].isBomb = true;
+      }
+
+
+
+
+      // Once the game has been initialized, we "render" it.
+      render()
+
+      //
+      // Game functions definitions
+      //
+
+      function discoverCell(row, col) {
+        //
+        // TODO: Task 5 - Reveal cells when clicked.
+        //
+        //
+        // TODO: Task 6 - Discover neighbor cells recursively, as long as there are no adjacent bombs to the current cell.
+        //
+        //
+        // TODO: Task 8 - Implement defeat. If the player "discovers" a bomb (clicks on it without holding shift), set the variable defeat to true.
+        //
+      }
+
+      function flagCell(row, col) {
+        //
+        // TODO: Task 7 - Implement flags. Flags allow the player to mark cells that they think contain a bomb.
+        //                When clicking a cell and holding shift, function flagCell() will be called for you.
+        //
+      }
+
+      // This function is called once for each cell when rendering the game. The row and col of the current cell is
+      // passed to the functionn
+      function countAdjacentBombs(row, col) {
+        //
+        // TODO: Task 4 - Adjacent bombs are bombs in cells touching our cell (also diagonally). Implement this function
+        //                so that it returns the count of adjacent cells with bombs in them.
+        //
+        return 1
+      }
+
+      function getBombsCount() {
+        //
+        // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
+        //
+        return 0
+      }
+
+      function getClearedCells() {
+        //
+        // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
+        //
+        return 0
+      }
+
+      function getTotalCellsToClear() {
+        //
+        // TODO: Task 9 - Implement stats: the counters currently always display 0, calculate and return the relevant values.
+        //
+        return 0
+      }
+
+      function checkForVictory() {
+        //
+        // TODO: Task 10 - Implement victory. If the player has revealed as many cells as they must (every cell that isn't a
+        //                 bomb), set variable victory to true.
+        //
+        return 0
+      }
+
+      //
+      // Rendering functions
+      //
+      function getMessage() {
+        if (victory == true) {
+          return 'Well done! 👏🏼<br><br>Refresh the page to start again.'
+        } else if (defeat) {
+          return 'Boom! 💥<br><br>Refresh the page to try again.'
+        }
+        return ''
+      }
+
+      // "Render" the game. Update the content of the page to reflect any changes to the game state.
+      function render() {
+        const playfield = document.querySelector('#playfield')
+        let html = ''
+        for (let row = 0; row < ROWS_COUNT; row++) {
+          html += '<div class="row">'
+          for (let col = 0; col < COLS_COUNT; col++) {
+            let cell = cells[row][col]
+            let cellText = ''
+            let cssClass = ''
+            let textColor = ''
+            if (cell.discovered || CHEAT_REVEAL_ALL || defeat) {
+              cssClass = 'discovered'
+              if (cell.isBomb) {
+                cellText = '💣'
+              } else {
+                let adjBombs = countAdjacentBombs(row, col)
+                if (adjBombs > 0) {
+                  cellText = adjBombs.toString()
+                  if (adjBombs == 1) {
+                    textColor = 'blue'
+                  } else if (adjBombs == 2) {
+                    textColor = 'green'
+                  } else if (adjBombs == 3) {
+                    textColor = 'red'
+                  } else if (adjBombs == 4) {
+                    textColor = 'black'
+                  }
+                }
+              }
+            } else {
+              if (cell.hasBeenFlagged) {
+                cellText = '🚩'
+              }
+            }
+            html += `<div class="cell ${cssClass}" style="color:${textColor}" onclick="onCellClicked(${row}, ${col}, event)">${cellText}</div>`
+          }
+          html += '</div>'
+        }
+        playfield.innerHTML = html
+
+        // Defeat screen
+        const body = document.querySelector('body')
+        if (defeat) {
+          body.classList.add('defeat')
+        }
+
+        // Victory screen
+        if (victory) {
+          body.classList.add('victory')
+        }
+
+        // Update stats
+        document.querySelector('#bombs-count').innerText =
+          getBombsCount().toString()
+        document.querySelector('#cleared-cells-count').innerText =
+          getClearedCells().toString()
+        document.querySelector('#total-cells-to-clear').innerText =
+          getTotalCellsToClear().toString()
+
+        // Update message
+        document.querySelector('#message').innerHTML = getMessage()
+      }
+
+      // This function gets called each time a cell is clicked. Arguments "row" and "col" will be set to the relevant
+      // values. Argument "event" is used to check if the shift key was held during the click.
+      function onCellClicked(row, col, event) {
+        if (event.shiftKey) {
+          flagCell(row, col)
+        } else {
+          discoverCell(row, col)
+        }
+        checkForVictory()
+        render()
+      }
+    </script>
+  </body>
+</html>
