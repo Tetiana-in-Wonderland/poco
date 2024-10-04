@@ -61,4 +61,20 @@ for (let i = 0; i < cars.length; i++) {
 //    console.log(tetiana);
 }
 
+let str = "hello world!".padEnd(8).substring(0, 8);
+console.log(str);
+
+str = "hello world!".padEnd(5).substring(0, 5);
+console.log(str);
+
+//makeFixedWidthString()
+//str = "hello world!!!!!!!!!!!!!!!!!!!!";
+//console.log(makeFixedWidthString(str, 12));
+
+let filename = "email@email.com";
+let parts = filename.split("@");
+console.log(parts.split("."));
+console.log(parts[0]);
+
+
 

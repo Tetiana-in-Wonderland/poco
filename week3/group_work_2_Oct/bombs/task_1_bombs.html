@@ -70,14 +70,38 @@
 
       //let bombLocation = [[1,5],[2,4],[7,10],[4,9],[3,6],[3,7],[6,4],[10,1],[7,7],[8,2]]
       //cellText = '💣'
+            // TODO: Task 1 - add some bombs at fixed positions.
+      //
+      //let bombLocation = [[1,5],[2,4],[7,10],[4,9],[3,6],[3,7],[6,4],[10,1],[7,7],[8,2]]
+      //cells[1][5].isBomb = true;
+      //cells[2][4].isBomb = true;
+      //cells[7][10].isBomb = true;
+      //cells[6][5].isBomb = true;
+      //cells[2][3].isBomb = true;
+      //cells[1][10].isBomb = true;
+      
+      //
+      // TODO: Task 2 - Comment out the code of task 1. Instead of adding bombs in fixed places, add 10 of them in random places.
+      //                Add a BOMBS_COUNT constant so that you can easily change the amount of bombs placed. Put it next to the
+      //                other constants.
+      //
+      //let bombLocation = [[1,5],[2,4],[7,10],[4,9],[3,6],[3,7],[6,4],[10,1],[7,7],[8,2]]
+      //cellText = '💣'
+      //cells[1][10].isBomb = true;
       let r;
       let c;
-      for (i=0; i < BOMBS_COUNT; i++){
+      bombLocationArray= [];
+      for (let i=0; i < BOMBS_COUNT; i++) {
               r = Math.floor(Math.random()*BOMBS_COUNT)
               c = Math.floor(Math.random()*BOMBS_COUNT)
-              //console.log(r + " , " + c)
-              cells[r][c].isBomb = true;
-      }
+              //console.log(r + ", " + c)
+              bombLocationArray[i]= [r,c]
+              if (bombLocationArray.find(subArray => subArray[0] === r && subArray[1] === c)){
+                  cells[r][c].isBomb = true;
+              console.log(bombLocationArray)
+            }
+      //console.log(cells)
+          }
 
 
 
