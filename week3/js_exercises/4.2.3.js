@@ -18,7 +18,7 @@ function translateIntoLanguage(wantedLanguage)
     return(translations[0]);
 }
 
-//let userInput = prompt("Select the language (en, es, de): \n");
-let userInput = "rrrrr";
+let userInput = prompt("Select the language (en, es, de): \n");
+//let userInput = "rrrrr";
 console.log(translateIntoLanguage(userInput));
     

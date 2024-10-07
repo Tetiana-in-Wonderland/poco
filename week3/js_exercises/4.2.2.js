@@ -23,13 +23,6 @@ for (let a = 1; a <= 10; a++) {
 
 // complex, with alignment
 for (let a = 1; a <= 10; a++) {
-    let text = (a + "| ").padStart(4);
-    for (let b = 1; b <= 10; b++) {
-        let c = a * b;
-        if (String(c).length <= 1) {
-            text += " ";
-        }
-        text += c
         if (b <= 9) {
             text += ", ";
         }
