@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <page>
+        <header>
+            <p>This is the Logo</p>
+            <nav>
+                <a href=""><p>Link</p></a>
+                <a href=""><p>Link</p></a>
+                <a href=""><p>Link</p></a>
+                <a href=""><p>Link</p></a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="picture">
+                <h1>Welcome to this Website</h1>
+                <img id="header-img" src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=2703&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <p id="headerText">We are a great company</p>
+                <button type="button">Book us now</button>
+            </section>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit repellendus accusantium quidem commodi. Reiciendis ducimus perspiciatis dolor quas quam non explicabo laudantium, excepturi distinctio perferendis, eveniet iste optio, consectetur quidem.</h4>
+        </main>
+
+        <footer>
+            <p>This is Sticky Footer</p>
+            <p>&#169; All rights reserved</p>
+        </footer>
+    </page>
+    <style>
+
+        *{
+            font-family: "Space Grotesk", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            width: 50vw;
+        }
+        page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure wrapper is always at least 100% of the viewport height */
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 50px;
+            background-color: bisque;
+            /*Make this header always stick to the top of the page*/
+            position: fixed;
+            top: 0px;
+            width: 100%;
+
+        }
+        #header-img{
+            width: 100vw;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        main {
+            flex: 1; /* This allows the main content area to expand and take up available space */
+        }
+        #picture {
+            position: relative;
+            text-align: center;
+            margin-top: 50px; /* Offset for sticky header */
+        }
+
+        h1 {
+            position: absolute;
+            top: 50%;  /* Centers vertically */
+            left: 50%; /* Centers horizontally */
+            transform: translate(-50%, -50%); /* Offsets by half the element's size to achieve perfect centering */
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  /* Optional: add text shadow for better readability */
+        }
+
+        section #picture img {
+            width: 100%;  /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        #headerText{
+            position: absolute;
+            left: 50%;
+            top: 65%;
+            transform: translate(-50%);
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        button {
+            position: absolute;
+            top: 71.5%;
+            left: calc(50% + 9rem); /* Adjust the positioning */
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            height: 30px;
+            background-color:lightblue;
+            color: white;
+            border: none;
+        }
+
+        button:hover{
+            background-color: coral;
+        }
+        h4 {
+            text-align: center;
+            margin: 5rem auto;
+            width: 70%;
+            border: 1px solid red;
+        }
+
+        /* Footer always sticks to the bottom */
+        footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+
+        main {
+            column-count: 3;
+            column-width: auto;
+            border: 6px solid rgb(86, 98, 110);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .box {
+            background-color: rgb(89, 161, 175);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .box.d {
+            column-span: all; /* to make box D span all the columns in the second row */
+            margin-top: 20px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Multi-column</h1>
+    </header>
+    <main>
+        <multi-column>
+            <div class="box a">A</div>
+            <div class="box b">B</div>
+            <div class="box c">C</div>
+            <div class="box d">D</div>
+        </multi-column>
+    </main>
+
+</body>
+</html>

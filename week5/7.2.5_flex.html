@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1.5rem;
+            font-style: bold;
+            margin: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            border: 6px solid rgb(86, 98, 110);
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 2em;
+        }
+
+        .box {
+            background-color: rgb(89, 161, 175);
+            color: white;
+            padding: 20px;
+            text-align: start;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .box.a, .box.b, .box.c {
+            flex-basis: 31%;
+        }
+
+        .box.d {
+            flex-basis: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flexbox</h1>
+    </header>
+    <main>
+        <div class="box a">A</div>
+        <div class="box b">B</div>
+        <div class="box c">C</div>
+        <div class="box d">D</div>
+    </main>
+</body>
+</html>
