@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books local storage</title>
+
+</head>
+<body>
+    <p><label>Title:</label> <input type="text" value="hello" id="title"></p>
+    <p><label>Author:</label> <input type="text" id="author"></p>
+    <p><button onclick="addBook()">Add book!</button></p>
+
+    <script>
+        let titleInput = document.getElementById("title");
+        let authorInput = document.getElementById("author");
+
+        let books = [];
+
+        /*
+        var books = [
+            {
+                title: 'The Design of EveryDay Things',
+                author: 'Don Norman',
+                alreadyRead: (1 == 2),
+                num: 2 + 2,
+            },
+            {
+                title: 'The Most Human Human',
+                author: 'Brian Christian',
+                alreadyRead: true
+            },
+        ];
+        */
+
+        //storeBooks();
+        loadBooks();
+
+        function addBook()
+        {
+            books.push({
+                title: titleInput.value,
+                author: authorInput.value,
+                alreadyRead: false,
+            });
+            console.log("Book added!");
+            storeBooks();
+        }
+
+        function loadBooks()
+        {
+            let booksJsonString = localStorage.getItem("books")
+            if (booksJsonString === null) {
+                books = [];
+                console.log("Books created (because no books in storage)!");
+                return;
+            }
+            books = JSON.parse(booksJsonString);
+            console.log("Books loaded!")
+        }
+
+        function storeBooks()
+        {        
+            let jsonString = JSON.stringify(books);
+            console.log(jsonString);
+            localStorage.setItem("books", jsonString);
+            console.log("Books saved!")
+        }
+    </script>    
+</body>
+</html>
