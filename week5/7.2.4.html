@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1.5rem;
+            font-style: bold;
+            text-align: center;
+        }
+  
+        .feature1, .feature2, .feature3 {
+            padding: 5rem;
+        }
+        nav {
+            background-color: rgb(134, 134, 255);
+            padding: 1rem;
+        }
+        header { 
+            background-color: rgb(177, 217, 253);
+            padding: 5rem;
+        }
+        .feature1 {
+            background-color: orange;
+        }
+        .feature2 {
+            background-color: violet;
+        }
+        .feature3 {
+            background-color: pink;
+        }
+        .content {
+            background-color: rgb(208, 218, 224);
+            padding: 5rem;
+        }
+        .sign-up {
+            background-color: rgb(211, 232, 250);
+            padding: 5rem;
+        }
+        p {
+            display: inline;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                display: flex;
+                flex-flow: column wrap;
+            }
+            nav, header, .content, .sign-up {
+                flex-basis: 100%;
+                width: 100%;
+                height: auto;
+            }
+            .features { 
+                display: flex;
+                flex-flow: column;
+            }
+
+            nav { order: -5; }
+            header { order: -4; }
+            .content { order: -3; }
+            .sign-up { order: -2; }
+            .feature1 { order: -1;}
+            .feature2 { order: 0;}
+            .feature3 { order: 1;}
+
+        }
+
+        @media (min-width: 600px) {
+            body {
+                margin:auto;
+                display: flex;
+                flex-flow: column;
+            }
+            header, .content, .sign-up {
+                flex-basis: 100%;
+            }
+            
+            .features { 
+                display: flex;
+                flex-flow: column;
+            }
+            .feature1, .feature2, .feature3  {
+                flex-basis: 50%;
+                text-align: center;
+            }
+
+            nav { order: 1; }
+            header { order: 2; }
+            .content { order: 4; }
+            .sign-up { order: 3; }
+
+        }
+
+        
+        @media (min-width: 1000px) {
+            body {
+                margin:auto;
+                display: flex;
+                flex-flow: column;
+            }
+            .features {
+                display: flex;
+                flex-flow: row nowrap;
+                margin: 0;
+            }
+            .feature1, .feature2, .feature3 {
+                flex-flow: 33.33%;
+            }
+            .sign-up, .content {
+                flex-flow: 100%;
+            }
+            nav { order: 1; }
+            header { order: 2; }
+            .content { order: 5; }
+            .sign-up { order: 4; }
+            .features { order: 3; }
+
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav><p>NAVIGATION</p></nav>
+    <header>
+        <p>HEADER</p>
+    </header>
+    <main>
+        <div class="features">
+            <div class="feature1"><p>FEATURE</p></div>
+            <div class="feature2"><p>FEATURE</p></div>
+            <div class="feature3"><p>FEATURE</p></div>
+        </div>
+        <div class="sign-up"><p>SIGN-UP</p></div>
+        <div class="content"><p>CONTENT</p></div>
+    </main>
+</body>
+</html>
