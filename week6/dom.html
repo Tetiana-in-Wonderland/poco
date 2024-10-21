@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Some <strong>text</strong>.</p>
+    <script>
+        let span = document.createElement("span");
+        let node = document.createTextNode("new text");
+        let parent = document.querySelector("#demo");
+        let strong = parent.querySelector("strong");
+        span.appendChild(node);
+        parent.replaceChild(span, strong);
+
+        function printTime() {
+            let currentDate = new Date();
+            let hours = currentDate.getHours();
+            let mins = currentDate.getMinutes();
+            let secs = currentDate.getSeconds();
+            document.write(hours + ":" + mins + ":" + secs +"\n");
+        }
+        
+        setInterval(printTime, 1000); // prints current time each second
+
+    </script>
+</body>
+</html>

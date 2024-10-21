@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printTime() {
+            let currentDate = new Date();
+            let hours = currentDate.getHours();
+            let mins = currentDate.getMinutes();
+            let secs = currentDate.getSeconds();
+            document.write(hours + ":" + mins + ":" + secs +"\n");
+        }
+        
+        setInterval(printTime, 1000); // prints current time each second
+
+        window.alert("Hello World!");
+    </script>
+</body>
+</html>
