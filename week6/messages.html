@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/week6/holy-grail-logo.svg">
+    <link rel="icon" type="image/x-icon" href="/week6/favicon.ico">
     <style>
         form {
             width: 20%;
@@ -41,7 +41,7 @@
             <label for="sender">Your message:</label>
             <input type="text" id="message" name="message" required>
         </fieldset>
-        <button type="submit" method: post>Submit!</button>
+        <button type="submit" id="submit">Submit!</button>
     </form>
 
     <div id="messages">
@@ -49,14 +49,16 @@
     </div>
 
     <script>
+        //hot to make messages from the other page displayed in current html
         const messageNode = document.getElementById("messages");
+
         function updatePage() { 
             fetch("https://powercoder-form-backend.onrender.com/messages-json")
             .then((response => response.json()))
             .then((messages => getMessages(messages?.messages ?? [])))
-    }
+        }
+
         updatePage()
-        //setTimeout(updatePage, 10000)
 
         function getMessages(messages) {
             console.log(messages);
@@ -79,9 +81,20 @@
                     <span style="color: #555;">${messageText}</span>
                 </div>`
             }
+
             console.log("messages are refreshed")
             setTimeout(updatePage, 10000)
         }
+
+        //How to send "form" fields using fetch
+        const data = new URLSearchParams();
+        data.append('sender', 'Me');
+        data.append('message', 'Hello');
+        fetch("https://powercoder-form-backend.onrender.com/submit", {
+            body: data,
+            method: "post",
+        }).then(response => console.log(response));
+
     </script>
 </body>
 </html>
