@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsam necessitatibus vitae expedita est. Iusto tenetur reiciendis labore neque omnis sint expedita, accusantium in blanditiis molestias ipsum necessitatibus deleniti quibusdam.</h2>
+    <script>
+        let promise = fetch("https://swapi.dev/api/people")
+        .then((response => response.json()))
+        .then((data => updatePage(data)));
+        //promise.then(onQueryCompleted);
+
+        //function onQueryCompleted(response) => response.json() 
+            /*{
+            console.log(response);
+            response.json().then(onReadComplete);
+            console.log("query completed, do something with result");
+            return response.json()
+        }*/
+
+        function updatePage(data) {
+            console.log(data);
+            for (let i=0; i < data.results.length; i++) {
+                resultName = data.results[i].name;
+                document.body.innerHTML += resultName + `<br>`;
+            }
+        }
+        
+        /*
+        function query(url) {
+            let iter = 0;
+            let total = 1234;
+
+            while (iter < 1000) {
+                for (let i=0; i < 1000; i++) {
+                    total += total;
+                    total = total / 4;
+                }
+                console.log("Doing some stuff here");
+                iter++;
+            }
+            console.log("total")
+        }
+
+        //let result = query("https://google.com");
+
+        let promise = query("https://google.com");
+        promise.then(onQueryCompleted);
+
+        function onQueryCompleted(result) {
+            console.log("query completed, do something with result")
+        }
+        */
+    </script>
+</body>
+</html>

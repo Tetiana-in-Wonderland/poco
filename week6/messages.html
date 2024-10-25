@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/week6/holy-grail-logo.svg">
+    <style>
+        form {
+            width: 20%;
+            background-image: url();
+        }
+        fieldset {
+            border-radius: 10px;
+
+        }
+        input {
+            display: block;
+            margin: 0.5rem 0;
+        }
+        button {
+            font-size: 1.25rem;
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid rgb(203, 241, 241);
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: rgb(203, 241, 241)
+        }
+    </style>
+    <title>Chat Room</title>
+
+</head>
+<body>
+    <h1>Chat with your Powercoders` peers!</h1>
+    <form action="https://powercoder-form-backend.onrender.com/submit" method="post">
+        <fieldset>
+            <label for="sender">Your name:</label>
+            <input type="text" id="sender" name="sender" required>
+
+            <label for="sender">Your message:</label>
+            <input type="text" id="message" name="message" required>
+        </fieldset>
+        <button type="submit" method: post>Submit!</button>
+    </form>
+
+    <div id="messages" method="post">
+        <h2>Received messages</h2>
+    </div>
+
+    <script>
+        function updatePage() { 
+            fetch("https://powercoder-form-backend.onrender.com/messages-json")
+            .then((response => response.json()))
+            .then((messages => getMessages(messages?.messages ?? [])))
+    }
+        updatePage()
+        //setTimeout(updatePage, 10000)
+
+        function getMessages(messages) {
+            console.log(messages);
+            console.log(messages[0]);
+            /*setTimeout(getMessages(messages), 4000);*/
+            console.log("resresh");
+            if (messages.length === 0) {
+                console.log("There are no messages")
+                return;
+            }
+            for (let i=0; i < messages.length; i++) {
+                console.log("text");
+                const messageSender = messages[i].sender;
+                const messageText = messages[i].text;
+                console.log(messageText);
+                /*document.body.innerHTML += messageSender + ": " + messageText + `<br>` ;*/
+                document.body.innerHTML += 
+                `<div style="display: inline-block; padding: 10px; margin: 5px; background-color: rgb(203, 241, 241); border-radius: 5px;">
+                    <span style="font-weight: bold; color: #333;">${messageSender}:</span>
+                    <span style="color: #555;">${messageText}</span>
+                </div>`
+            }
+            console.log("messages are refreshed")
+            setTimeout(updatePage, 10000)
+        }
+    </script>
+</body>
+</html>
