@@ -44,11 +44,12 @@
         <button type="submit" method: post>Submit!</button>
     </form>
 
-    <div id="messages" method="post">
+    <div id="messages">
         <h2>Received messages</h2>
     </div>
 
     <script>
+        const messageNode = document.getElementById("messages");
         function updatePage() { 
             fetch("https://powercoder-form-backend.onrender.com/messages-json")
             .then((response => response.json()))
@@ -60,8 +61,8 @@
         function getMessages(messages) {
             console.log(messages);
             console.log(messages[0]);
-            /*setTimeout(getMessages(messages), 4000);*/
             console.log("resresh");
+            messageNode.innerHTML = "";
             if (messages.length === 0) {
                 console.log("There are no messages")
                 return;
@@ -72,7 +73,7 @@
                 const messageText = messages[i].text;
                 console.log(messageText);
                 /*document.body.innerHTML += messageSender + ": " + messageText + `<br>` ;*/
-                document.body.innerHTML += 
+                messageNode.innerHTML += 
                 `<div style="display: inline-block; padding: 10px; margin: 5px; background-color: rgb(203, 241, 241); border-radius: 5px;">
                     <span style="font-weight: bold; color: #333;">${messageSender}:</span>
                     <span style="color: #555;">${messageText}</span>
